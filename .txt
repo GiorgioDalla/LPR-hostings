@@ -1,0 +1,49 @@
+    // async function getSignatureByAddress(account) {
+    //     const response = await fetch("http://localhost:3000/api/list")
+    //     const data = await response.json()
+    //     for (var i = 0; i < data.length; i++) {
+    //         if (data[i]._id == account) {
+    //             return data[i]["mintSignature"] || "no signature"
+    //         }
+    //     }
+    //     return "No such address"
+    // }
+    // keyPass = getSignatureByAddress(account)
+
+    // console.log(keyPass)
+
+    // const dataMaker = async () => {
+    //     const response = await fetch("http://localhost:3000/api/list")
+    //     const data = await response.json()
+    //     return data
+    // }
+    // console.log(dataMaker)
+    async function dataMaker() {
+        const response = await fetch("http://localhost:3000/api/list")
+        const data = await response.json()
+        return data
+    }
+    let datafetched = dataMaker()
+    console.log(datafetched)
+
+    async function findSignature(account) {
+        let data = await dataMaker()
+        for (var i = 0; i < data.length; i++) {
+            if (data[i]._id == account) {
+                return data[i]["mintSignature"] || "no signature"
+            }
+            return "No such address"
+        }
+    }
+
+    let requiredSignature = findSignature()
+
+    console.log(requiredSignature)
+
+    //////
+            Object.keys(responseData)
+            .filter((key) => key.includes("0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266"))
+            .reduce((cur, key) => {
+                return Object.assign(cur, { [key]: responseData[key] })
+            }, {})
+    /////
