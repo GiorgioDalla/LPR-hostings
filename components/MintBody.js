@@ -80,7 +80,7 @@ export default function MainMint() {
     }, [currentSupply])
 
     return (
-        // <div className="mb-">
+
         <div className="mt-14 divBox grid h-128 place-items-center justify center border-16 border-red-400 cursor-default">
             {LprAddress && isWeb3Enabled ? (
                 <div>
@@ -108,7 +108,7 @@ export default function MainMint() {
                 </div>
             )}
 
-            <div className="text-l font-sans ">{currentSupply}/111</div>
+            <div className="text-l font-sans ">{currentSupply}/111 minted</div>
         </div>
     )
 }

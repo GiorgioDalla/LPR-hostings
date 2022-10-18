@@ -144,3 +144,41 @@ let fetchedData = dataMaker()
 
 module.exports = { fetchedData }
 /////////
+const fetch = require("node-fetch")
+const url = "http://localhost:3000/api/list"
+
+const getData = async (url) => {
+    try {
+        const response = await fetch(url)
+        const json = await response.json()
+        console.log(json)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+getData(url)
+
+module.exports = { getData }
+
+
+////////////
+async function dataMaker() {
+    const response = await fetch("http://localhost:3000/api/list")
+    const data = await response.json()
+    console.log(data)
+}
+dataMaker()
+
+///////////////
+
+18:27:00 for hosting
+to do 
+deploy to goerli
+add the goerli chainId
+update the metadata
+check opensea if the files are okay
+check the number
+upload to eth
+:D 
+add error messages
