@@ -81,7 +81,7 @@ export default function MainMint() {
 
     return (
 
-        <div className="mt-14 divBox grid h-128 place-items-center justify center border-16 border-red-400 cursor-default">
+        <div className="m grid h-128 place-items-center justify center border-16 border-red-400 cursor-default">
             {LprAddress && isWeb3Enabled ? (
                 <div>
                     <button
